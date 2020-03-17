@@ -1,0 +1,11 @@
+@import "../../../styles/components/page.scss";
+
+:host {
+	@include app-page;
+
+
+
+	& > mat-card + mat-card {
+		margin-top: 30px;
+	}
+}

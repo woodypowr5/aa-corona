@@ -1,0 +1,39 @@
+@mixin app-page {
+	padding: 30px;
+	display: block;
+
+	& > .heading {
+		margin-bottom: 50px;
+
+		h1 {
+			text-align: center;
+		}
+
+		aside {
+			text-align: center;
+			margin-top: -15px;
+		}
+	}
+
+	& > mat-card + mat-card {
+		margin-top: 30px;
+	}
+
+	mat-card {
+		padding: 50px 30px;
+
+		h2 {
+			margin-bottom: 30px;
+		}
+
+		p {
+			font-family: 'Baloo Chettan 2', sans-serif;
+			text-align: justify;
+		}
+	}
+
+	& > button {
+		display: block;
+		margin: 50px auto;
+	}
+}
