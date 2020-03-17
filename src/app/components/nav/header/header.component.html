@@ -1,0 +1,37 @@
+<mat-toolbar 
+	color="primary"
+>
+    <div>
+      <a class="logo" *ngIf="!isAdmin" [routerLink]="['/home']" >
+		LOGO
+	  </a>
+    </div>
+	<div class="navlinks-container">
+      <ul class="navigation-items">
+        <li>
+			<a 
+				routerLink="/meetings" 
+				[ngClass]="{'active': activeRoute === '/meetings'}"
+			>
+				Meetings
+			</a>
+		</li>
+		<li>
+			<a 
+				routerLink="/links" 
+				[ngClass]="{'active': activeRoute === '/links'}"
+			>
+				Links
+			</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu">
+		<button 
+			mat-icon-button 
+			(click)="onToggleSidenav()"
+		>
+			<mat-icon>menu</mat-icon>
+		</button>
+    </div>
+</mat-toolbar>

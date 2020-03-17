@@ -1,0 +1,49 @@
+.mat-toolbar, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6  {
+	background-color: #555;
+}
+
+.logo > span {
+	font-size: 0.8em;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+	
+	&.active{
+		text-decoration: underline;
+	}
+}
+
+mat-toolbar{
+	display: flex;
+	justify-content: space-between;
+}
+
+.navlinks-container{
+	flex-grow: 2;
+	padding-left: 20px;
+	padding-right: 5%;
+	max-width: calc(100% - 100px);
+}
+
+.navigation-items{
+	display: flex;
+	justify-content: flex-start;
+	list-style-type: none;
+	padding: 0px;
+
+	li{
+		font-size: 0.7em;
+		color: text-colors(primary-inverse-subdued-1);
+		margin-right: 20px;
+		font-weight: lighter;
+		
+		a {
+			&:hover {
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+<mat-nav-list>
+	<a [routerLink]="['/home']" class="logo">LOGO</a>
+	<mat-divider></mat-divider>
+	<a 
+		mat-list-item 
+		[routerLink]="['/home']" 
+		[ngClass]="{'active': activeRoute === '/home'}"
+		(click)="close()"
+	>
+		<span class="nav-caption">Home</span>
+	</a>
+	<a 
+		mat-list-item 
+		[routerLink]="['/meetings']"
+		[ngClass]="{'active': activeRoute === '/meetings'}"
+		(click)="close()"
+	>
+		<span class="nav-caption">Meetings</span>
+	</a>
+	<a 
+		mat-list-item 
+		[routerLink]="['/links']" 
+		[ngClass]="{'active': activeRoute === '/links'}"
+		(click)="close()"
+	>
+		<span class="nav-caption">Links</span>
+	</a>
+</mat-nav-list>
