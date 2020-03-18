@@ -1,0 +1,84 @@
+@import "../../../styles/components/page.scss";
+
+:host {
+	@include app-page;
+
+	.meetings > mat-card + mat-card {
+		margin-top: 30px;
+	}
+
+	.meeting {
+		padding: 30px;
+
+		display: flex;
+		justify-content: space-between;
+
+		@media only screen and (max-width: 800px) {
+			flex-direction: column;
+		}
+
+		.property + .property {
+			margin-top: 20px;	
+		}
+
+		.property {
+			display: flex;
+			
+			.label {
+				width: 100px;
+				font-weight: bold;
+			}
+
+			.value {
+
+			}
+		}
+
+		.meta {
+			padding-right: 50px;
+			width: 550px;
+
+			@media only screen and (max-width: 800px) {
+				padding-right: 0px;
+				margin-bottom: 40px;
+				width: 100%;
+			}
+
+			.name {
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			.description {
+				max-width: 500px;
+				color: #666;
+				font-size: 14px;
+			}
+
+			.link {
+				margin-top: 40px;
+			}
+		}
+
+		.date-time {
+			min-width: 200px;
+			max-width: 400px;
+			flex-grow: 2;
+		}
+	}
+
+	.notes {
+		margin-top: 80px;
+		h1 {
+			text-align: center;
+		}
+		
+		h2 {
+			font-size: 16px;
+		}
+
+		p {
+			font-size: 12px;
+		}
+	}
+}

@@ -1,1 +1,70 @@
-<p>meetings works!</p>
+<div class="heading">
+	<h1>Online Meetings</h1>
+	<aside>for the Redding, CA area</aside>
+</div>
+
+<div class="meetings">
+	<mat-card class="meeting" *ngFor="let meeting of meetings">
+		<div class="meta">
+			<div class="property name">
+				{{ meeting.name }}
+			</div>
+			<div class="property description">
+				{{ meeting.description }}
+			</div>
+			<div class="property link">
+				<div class="label">
+					Zoom link:
+				</div>
+				<div class="value">
+					<a *ngIf="meeting.link" href="{{meeting.link}}">{{ meeting.link }}</a>
+					<span *ngIf="!meeting.link">TBD. Check back soon.</span>
+				</div>
+			</div>
+		</div>	
+		<div class="date-time">
+			<div class="property date">
+				<div class="label">
+					Date:
+				</div>
+				<div class="value">
+					{{ meeting.date }}
+				</div>
+			</div>
+			<div class="property time">
+				<div class="label">
+					Time:
+				</div>
+				<div class="value">
+					{{ meeting.time }}
+				</div>
+			</div>
+			<div class="property secretary">
+				<div class="label">
+					Secretary:
+				</div>
+				<div class="value">
+					{{ meeting.secretary }}
+				</div>
+			</div>
+			<div class="property secretary">
+				<div class="label">
+					Format:
+				</div>
+				<div class="value">
+					{{ meeting.format }}
+				</div>
+			</div>
+		</div>		
+	</mat-card>
+</div>
+
+<div class="notes">
+	<h1>Notes</h1>
+	<h2>Want to host a meeting?</h2>
+	<p>Contact Chris at reddingrecoveryonline@outlook.com. No meetings will be held during times at which regularly scheduled AA meeting are held in the Redding area, and are still active given the current COVID-19 situation. See the Redding AA Norcal Schedule here: <a href="https://www.aanorcal.org/">https://www.aanorcal.org/</a></p>
+	<h2>Concerned about anonymity?</h2>
+	<p>Zoom meetings are launched with both audio and video disabled by default. So don't worry about inadvertently compromising your anonymity. Feel free to enable video or audio when you wish, or not at all. Feel free to just listen.</p>
+	<h2>About Zoom:</h2>
+	<p>Not familiar with Zoom? Check out their site to learn more: <a href="https://zoom.us/">https://zoom.us/</a></p>
+</div>

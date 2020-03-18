@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/nav/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { MeetingsComponent } from './components/pages/meetings/meetings.component';
 import { LinksComponent } from './components/pages/links/links.component';
+import { FooterComponent } from './components/nav/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LinksComponent } from './components/pages/links/links.component';
 	HeaderComponent,
 	HomeComponent,
 	MeetingsComponent,
-	LinksComponent
+	LinksComponent,
+	FooterComponent
   ],
   imports: [
     BrowserModule,
