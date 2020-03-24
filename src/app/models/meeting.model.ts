@@ -1,11 +1,13 @@
+import { Weekday } from './day-of-week';
+
 export interface Meeting {
-	id: number;
+	day?: Weekday;
 	name: string;
 	date: string;
 	time: string;
 	link?: string;
 	description?: string;
-	format: "Discussion" | "Speaker/Discussion" | "Speaker" | "Topic" | "No Format";
+	format: "Discussion" | "Speaker/Discussion" | "Speaker" | "Topic" | "No Format" | "Book Study" | "TBD";
 	speakerName?: string;
 	secretary: string;
 }

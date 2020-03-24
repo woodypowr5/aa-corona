@@ -16,6 +16,10 @@ const routes: Routes = [
 	{
 		path: "links",
 		component: LinksComponent
+	},
+	{
+		path: "**",
+		component: HomeComponent
 	}
 ];
 

@@ -1,20 +1,21 @@
 <div class="heading">
-	<h1>Online Meetings</h1>
+	<h1>Daily Meetings</h1>
 	<aside>for the Redding, CA area</aside>
 </div>
 
+
 <div class="meetings">
-	<mat-card class="meeting" *ngFor="let meeting of meetings">
+	<mat-card class="meeting" *ngFor="let meeting of dailyMeetings">
 		<div class="meta">
 			<div class="property name">
 				{{ meeting.name }}
 			</div>
-			<div class="property description">
+			<div class="property description" *ngIf="meeting.description">
 				{{ meeting.description }}
 			</div>
 			<div class="property link">
 				<div class="label">
-					Zoom link:
+					Link:
 				</div>
 				<div class="value">
 					<a *ngIf="meeting.link" href="{{meeting.link}}">{{ meeting.link }}</a>
@@ -23,22 +24,14 @@
 			</div>
 		</div>	
 		<div class="date-time">
-			<div class="property date">
-				<div class="label">
-					Date:
-				</div>
-				<div class="value">
-					{{ meeting.date }}
-				</div>
-			</div>
-			<div class="property time">
+			<!-- <div class="property time">
 				<div class="label">
 					Time:
 				</div>
 				<div class="value">
 					{{ meeting.time }}
 				</div>
-			</div>
+			</div> -->
 			<div class="property secretary">
 				<div class="label">
 					Secretary:
@@ -55,8 +48,82 @@
 					{{ meeting.format }}
 				</div>
 			</div>
-		</div>		
+		</div>	
+		<div class="time">
+			{{ meeting.time }}
+		</div>	
 	</mat-card>
+</div>
+
+
+<div class="heading weekly">
+	<h1>Weekly Meetings</h1>
+</div>
+
+<div class="filters">
+	<h4>Filter by day:</h4>
+	<mat-form-field>
+		<mat-label>Select</mat-label>
+		<mat-select (selectionChange)="selectionChange($event)">
+			<mat-option *ngFor="let option of filterOptions" [value]="option">
+				{{ option }}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+</div>
+
+<div class="meetings">
+	<div class="day" *ngFor="let weekday of filteredWeekdays">
+		<h2>{{ weekday }}</h2>
+		<mat-card class="meeting" *ngFor="let meeting of getMeetingsForWeekday(weekday)">
+			<div class="meta">
+				<div class="property name">
+					{{ meeting.name }}
+				</div>
+				<div class="property description" *ngIf="meeting.description">
+					{{ meeting.description }}
+				</div>
+				<div class="property link">
+					<div class="label">
+						Link:
+					</div>
+					<div class="value">
+						<a *ngIf="meeting.link" href="{{meeting.link}}">{{ meeting.link }}</a>
+						<span *ngIf="!meeting.link">TBD. Check back soon.</span>
+					</div>
+				</div>
+			</div>	
+			<div class="date-time">
+				<!-- <div class="property time">
+					<div class="label">
+						Time:
+					</div>
+					<div class="value">
+						{{ meeting.time }}
+					</div>
+				</div> -->
+				<div class="property secretary">
+					<div class="label">
+						Secretary:
+					</div>
+					<div class="value">
+						{{ meeting.secretary }}
+					</div>
+				</div>
+				<div class="property secretary">
+					<div class="label">
+						Format:
+					</div>
+					<div class="value">
+						{{ meeting.format }}
+					</div>
+				</div>
+			</div>	
+			<div class="time">
+				{{ meeting.time }}
+			</div>	
+		</mat-card>
+	</div>
 </div>
 
 <div class="notes">
@@ -64,7 +131,9 @@
 	<h2>Want to host a meeting?</h2>
 	<p>Contact Chris at reddingrecoveryonline@outlook.com. No meetings will be held during times at which regularly scheduled AA meeting are held in the Redding area, and are still active given the current COVID-19 situation. See the Redding AA Norcal Schedule here: <a href="https://www.aanorcal.org/">https://www.aanorcal.org/</a></p>
 	<h2>Concerned about anonymity?</h2>
-	<p>Zoom meetings are launched with both audio and video disabled by default. So don't worry about inadvertently compromising your anonymity. Feel free to enable video or audio when you wish, or not at all. Feel free to just listen.</p>
-	<h2>About Zoom:</h2>
-	<p>Not familiar with Zoom? Check out their site to learn more: <a href="https://zoom.us/">https://zoom.us/</a></p>
+	<p>Zoom meetings are launched with both audio and video disabled by default. So don't worry about inadvertently compromising your anonymity. Feel free to enable video or audio when you wish, or not at all. Feel free to just listen. I'm not sure about Google Hangouts. </p>
+	<h2>Don't have a computer?</h2>
+	<p>Or don't want to download the app? You can also call in from a phone. Click on the link for the meeting you want to join, and there will be a call-in phone number and a meeting ID. Just call the number and enter the meeting ID when prompted.</p>
+	<h2>About Zoom and Google Hangouts:</h2>
+	<p>Not familiar with Zoom or Google Hangouts? Check out their site to learn more: <a href="https://zoom.us/">Zoom</a>, <a href="https://gsuite.google.com/products/meet/">Google Hagnouts</a></p>
 </div>

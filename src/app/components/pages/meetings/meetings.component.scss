@@ -3,18 +3,55 @@
 :host {
 	@include app-page;
 
-	.meetings > mat-card + mat-card {
-		margin-top: 30px;
+
+	.heading.weekly {
+		margin-top: 110px;
+	}
+
+
+	.filters {
+		width: 180px;
+		margin: 0 auto;
+
+		h4 {
+			text-align: center;
+		}
+
+		mat-form-field {
+		
+		}
+	}
+
+	.day {
+		& > mat-card + mat-card {
+			margin-top: 30px;
+		}
+
+		h2 {
+			font-weight: bold;
+			margin-top: 60px;
+			margin-bottom: 40px;
+			text-align: center;
+			color: #444;
+		}
 	}
 
 	.meeting {
-		padding: 30px;
-
+		padding: 80px 40px 30px 40px;
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 
 		@media only screen and (max-width: 800px) {
 			flex-direction: column;
+		}
+
+		.time {
+			position: absolute;
+			left: 20px;
+			top: 15px;
+			font-size: 28px;
+			color: #666;
 		}
 
 		.property + .property {
@@ -27,6 +64,7 @@
 			.label {
 				width: 100px;
 				font-weight: bold;
+				// margin-right: 20px;
 			}
 
 			.value {
@@ -45,7 +83,7 @@
 			}
 
 			.name {
-				font-size: 16px;
+				font-size: 18px;
 				font-weight: bold;
 			}
 
@@ -57,6 +95,26 @@
 
 			.link {
 				margin-top: 40px;
+
+				overflow-wrap: break-word;
+				word-wrap: break-word;
+			  
+				-ms-word-break: break-all;
+				/* This is the dangerous one in WebKit, as it breaks things wherever */
+				word-break: break-all;
+				/* Instead use this non-standard one: */
+				word-break: break-word;
+			  
+				/* Adds a hyphen where the word breaks, if supported (No Blink) */
+				-ms-hyphens: auto;
+				-moz-hyphens: auto;
+				-webkit-hyphens: auto;
+				hyphens: auto;
+
+				@media only screen and (max-width: 800px) {
+					display: flex;
+					flex-direction: column;
+				}	
 			}
 		}
 
@@ -66,6 +124,7 @@
 			flex-grow: 2;
 		}
 	}
+	
 
 	.notes {
 		margin-top: 80px;

@@ -2,12 +2,12 @@
 	<mat-sidenav #sidenav role="navigation">
 		<app-sidenav-list 
 			(closeSidenav)="sidenav.close()"
-			[activeRoute]="activeRoute"></app-sidenav-list>
+		>	
+		</app-sidenav-list>
 	</mat-sidenav>
 	<mat-sidenav-content>
 		<app-header 
 			(sidenavToggle)="sidenav.toggle()"
-			[activeRoute]="activeRoute"
 		>
 		</app-header>
 		<main>
