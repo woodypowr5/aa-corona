@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meeting } from 'src/app/models/meeting.model';
 import { meetingsData, dailyMeetingsData } from 'src/app/data/meetings';
 import { Weekday, weekdays } from 'src/app/models/day-of-week';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meetings',
@@ -15,7 +16,9 @@ export class MeetingsComponent implements OnInit {
 	filteredWeekdays: Weekday[] = weekdays;
 	filterOptions: any = ["Show All", ...weekdays];
 
-	constructor() { }
+	constructor(
+		private router: Router
+	) { }
 
 	ngOnInit() {
 	}
@@ -31,4 +34,8 @@ export class MeetingsComponent implements OnInit {
 	getMeetingsForWeekday(weekday: Weekday): Meeting[] {
 		return this.meetings.filter((meeting: Meeting) => meeting.day === weekday);
 	}
+	
+	foolowLink(link: string): void {
+		this.router.navigateByUrl(link);
+	} 
 }

@@ -7,7 +7,8 @@ export interface Meeting {
 	time: string;
 	link?: string;
 	description?: string;
-	format: "Discussion" | "Speaker/Discussion" | "Speaker" | "Topic" | "No Format" | "Book Study" | "TBD";
+	password?: string;
+	format: "Discussion" | "Speaker/Discussion" | "Speaker" | "Topic" | "No Format" | "Book Study" | "TBD" | "Secretary's Choice";
 	speakerName?: string;
 	secretary: string;
 }

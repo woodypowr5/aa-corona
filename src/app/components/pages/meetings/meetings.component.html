@@ -3,7 +3,6 @@
 	<aside>for the Redding, CA area</aside>
 </div>
 
-
 <div class="meetings">
 	<mat-card class="meeting" *ngFor="let meeting of dailyMeetings">
 		<div class="meta">
@@ -18,20 +17,20 @@
 					Link:
 				</div>
 				<div class="value">
-					<a *ngIf="meeting.link" href="{{meeting.link}}">{{ meeting.link }}</a>
+					<a *ngIf="meeting.link" href="{{meeting.link}}" >{{ meeting.link }}</a>
 					<span *ngIf="!meeting.link">TBD. Check back soon.</span>
 				</div>
 			</div>
-		</div>	
-		<div class="date-time">
-			<!-- <div class="property time">
+			<div *ngIf="meeting.password" class="property description">
 				<div class="label">
-					Time:
+					Password: 
 				</div>
 				<div class="value">
-					{{ meeting.time }}
-				</div>
-			</div> -->
+					{{ meeting.password }}
+				</div> 
+			</div>
+		</div>	
+		<div class="date-time">
 			<div class="property secretary">
 				<div class="label">
 					Secretary:
@@ -92,16 +91,16 @@
 						<span *ngIf="!meeting.link">TBD. Check back soon.</span>
 					</div>
 				</div>
-			</div>	
-			<div class="date-time">
-				<!-- <div class="property time">
+				<div *ngIf="meeting.password" class="property description">
 					<div class="label">
-						Time:
+						Password: 
 					</div>
 					<div class="value">
-						{{ meeting.time }}
-					</div>
-				</div> -->
+						{{ meeting.password }}
+					</div> 
+				</div>
+			</div>	
+			<div class="date-time">
 				<div class="property secretary">
 					<div class="label">
 						Secretary:
